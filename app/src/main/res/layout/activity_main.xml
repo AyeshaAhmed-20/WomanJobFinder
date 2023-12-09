@@ -7,8 +7,15 @@
     android:orientation="vertical"
     android:layout_gravity="center"
     android:gravity="center"
-    android:backgroind="@drawable/background_color"
+
+    android:background="@drawable/blueback"
     tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/logoblue"
+        />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -17,62 +24,47 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="LOG IN"
-                android:textColor="@android:color/white"
-                android:textAppearance="?android:textAppearanceLarge"
-                />
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:hint="Email:"
-                android:background="@drawable/edit_design"
-                android:padding="10dp"
-                android:textColorHint="@android:color/white"
-                android:textColor="@android:color/black"
-                android:id="@+id/email_login"
-                />
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:hint="Password:"
-                android:background="@drawable/edit_design"
-                android:padding="15dp"
-                android:textColorHint="@android:color/white"
-                android:textColor="@android:color/black"
-                android:id="@+id/login_password"
-                android:inputType="textPasword"
-                />
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="LOG IN"
-                android:textAppearance="?android:textAppearanceLarge"
-                android:id="@+id/btn_login"
-                />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="OR"
-                android:gravity="center"
-                android:padding="10dp"
-                android:textColor="@android:color/black"
-                android:textAppearance="?android:textAppearanceLarge" />
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="Registration"
-                android:textAppearance="?android:textAppearanceMedium"
-                android:id="@+id/btn_reg"
-                />
+
+
+
         </LinearLayout>
         </ScrollView>
 
+    <Button
+        android:id="@+id/btn_reg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:text="Create an account"
+        android:textAppearance="?android:textAppearanceMedium"
+        app:layout_constraintEnd_ToEndOf="parent"
+        app:layout_constraintStart_ToStartOf="parent"
+        app:layout_constraintTop_ToBottomOf="@+id/phone" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:text="SIGN IN"
+        android:textAppearance="?android:textAppearanceLarge"
+        app:layout_constraintEnd_ToEndOf="parent"
+        app:layout_constraintStart_ToStartOf="parent"
+        app:layout_constraintTop_ToBottomOf="@+id/phone" />
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_ToBottomOf="parent"
+        app:layout_constraintEnd_ToEndOf="parent"
+        app:layout_constraintStart_ToStartOf="parent"
+        app:layout_constraintTop_ToBottomOf="@+id/phone"
+        app:layout_constraintVertical_Bias="0.26" />
 
 
 </LinearLayout>
