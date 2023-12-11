@@ -2,6 +2,7 @@ package com.example.womanjobapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -32,9 +33,9 @@ public class Register extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),login.class));
+//                startActivity(new Intent(new Intent(getApplicationContext(),login.class));
             }
         });
-
+//        register.setOnClickListener();
     }
 }

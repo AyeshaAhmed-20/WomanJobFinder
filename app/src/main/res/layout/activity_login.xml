@@ -6,5 +6,69 @@
     android:layout_height="match_parent"
     android:background="@drawable/blueback"
     tools:context=".login">
+    <TextView
+        android:id="@+id/signup_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
 
+        android:text="Log In"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="#125297"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_ToEndOf="parent"
+        app:layout_constraintStart_ToStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.109"
+        tools:layout_editor_absoluteX="145dp" />
+    <EditText
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:id="@+id/name_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_ToEndOf="parent"
+        app:layout_constraintStart_ToStartOf="parent"
+        app:layout_constraintTop_ToBottomOf="@+id/signup_text"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.363"
+        tools:layout_editor_absoluteX="10dp" />
+
+    <EditText
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:id="@+id/email_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Email"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/white"
+        app:layout_constraintEnd_ToEndOf="parent"
+        app:layout_constraintStart_ToStartOf="parent"
+        app:layout_constraintTop_ToBottomOf="@+id/name_login"
+        tools:layout_editor_absoluteX="9dp"
+        tools:layout_editor_absoluteY="304dp" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Sign In"
+        android:textSize="20sp"
+        app:layout_constraintEnd_ToEndOf="parent"
+        app:layout_constraintStart_ToStartOf="parent"
+        app:layout_constraintTop_ToBottomOf="@+id/email_login"
+        tools:layout_editor_absoluteX="153dp"
+        tools:layout_editor_absoluteY="422dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
