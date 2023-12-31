@@ -1,70 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_gravity="center"
+    android:padding="16dp"
     android:gravity="center"
-
-    android:background="@drawable/blueback"
     tools:context=".MainActivity">
 
-    <ImageView
+    <EditText
+        android:id="@+id/editTextEmail"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:src="@drawable/logoblue"
-        />
+        android:layout_height="wrap_content"
+        android:hint="Email"/>
 
-    <ScrollView
+    <EditText
+        android:id="@+id/editTextPassword"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <LinearLayout
-            android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:inputType="textPassword"/>
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_height="50dp">
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-
-
-        </LinearLayout>
-        </ScrollView>
-
-    <Button
-        android:id="@+id/btn_reg"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
-        android:text="Create an account"
-        android:textAppearance="?android:textAppearanceMedium"
-        app:layout_constraintEnd_ToEndOf="parent"
-        app:layout_constraintStart_ToStartOf="parent"
-        app:layout_constraintTop_ToBottomOf="@+id/phone" />
-
-    <Button
-        android:id="@+id/btn_login"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
-        android:text="SIGN IN"
-        android:textAppearance="?android:textAppearanceLarge"
-        app:layout_constraintEnd_ToEndOf="parent"
-        app:layout_constraintStart_ToStartOf="parent"
-        app:layout_constraintTop_ToBottomOf="@+id/phone" />
-
-    <ProgressBar
-        android:id="@+id/progressbar"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="wrap_parent"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        app:layout_constraintBottom_ToBottomOf="parent"
-        app:layout_constraintEnd_ToEndOf="parent"
-        app:layout_constraintStart_ToStartOf="parent"
-        app:layout_constraintTop_ToBottomOf="@+id/phone"
-        app:layout_constraintVertical_Bias="0.26" />
-
+            android:text="Don't have an account? "
+            android:layout_marginTop="16dp"
+            android:textColor="@android:color/holo_blue_light"
+            android:gravity="center"/>
+        <TextView
+            android:id="@+id/textViewSignUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign up"
+            android:layout_marginTop="16dp"
+            android:textColor="@android:color/holo_blue_light"
+            android:clickable="true"
+            android:gravity="center"/>
+    </LinearLayout>
 
 </LinearLayout>

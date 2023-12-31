@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "745813112604",
+    "project_id": "women-job-finder",
+    "storage_bucket": "women-job-finder.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:745813112604:android:08b91731c246d7b064acd9",
+        "android_client_info": {
+          "package_name": "com.example.womenjobfinder"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjdLsIKHsfLe_ajZs41IkuDjIqKTL22oo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
