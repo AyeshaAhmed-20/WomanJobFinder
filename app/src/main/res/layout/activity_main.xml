@@ -9,47 +9,12 @@
     android:gravity="center"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/editTextEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Email"/>
+    <ImageView
+        android:id="@+id/myJobs"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:src="@drawable/logo"/>
 
-    <EditText
-        android:id="@+id/editTextPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Password"
-        android:inputType="textPassword"/>
 
-    <Button
-        android:id="@+id/buttonLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Login"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:orientation="horizontal"
-        android:layout_height="50dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Don't have an account? "
-            android:layout_marginTop="16dp"
-            android:textColor="@android:color/holo_blue_light"
-            android:gravity="center"/>
-        <TextView
-            android:id="@+id/textViewSignUp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sign up"
-            android:layout_marginTop="16dp"
-            android:textColor="@android:color/holo_blue_light"
-            android:clickable="true"
-            android:gravity="center"/>
-    </LinearLayout>
 
 </LinearLayout>

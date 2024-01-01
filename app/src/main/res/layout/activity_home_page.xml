@@ -7,7 +7,7 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_margin="5dp"
+        android:layout_margin="10dp"
         android:layout_height="wrap_content">
 
         <TextView
@@ -23,7 +23,14 @@
             android:id="@+id/myJobs"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:layout_marginEnd="10dp"
             android:src="@drawable/job"/>
+        <ImageView
+            android:id="@+id/logoutButton"
+            android:layout_width="25dp"
+            android:layout_height="30dp"
+            android:padding="3dp"
+            android:src="@drawable/logout"/>
     </LinearLayout>
 
     <SearchView

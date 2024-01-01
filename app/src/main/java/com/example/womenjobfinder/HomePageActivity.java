@@ -19,6 +19,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -34,7 +35,7 @@ public class HomePageActivity extends AppCompatActivity {
     private SearchView searchView;
     ArrayList<JobModel> dataModalArrayList;
     private TextView textView;
-    private ImageView myJobButton;
+    private ImageView myJobButton,logout;
     private FirebaseFirestore db;
 
     private JobAdaptor adapter;
@@ -46,6 +47,7 @@ public class HomePageActivity extends AppCompatActivity {
         listView = findViewById(R.id.jobListView);
         textView = findViewById(R.id.textViewWelcome);
         myJobButton = findViewById(R.id.myJobs);
+        logout = findViewById(R.id.logoutButton);
 
         dataModalArrayList = new ArrayList<>();
 
@@ -55,6 +57,15 @@ public class HomePageActivity extends AppCompatActivity {
                 Intent intent = new Intent(HomePageActivity.this, AppliedJobsActivity.class);
 
                 startActivity(intent);
+            }
+        });
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(HomePageActivity.this, LoginActivity.class));
+                finish();
             }
         });
 
@@ -80,7 +91,7 @@ public class HomePageActivity extends AppCompatActivity {
                                 // storing that data in our array list
                                 dataModalArrayList.add(dataModal);
 
-                                Toast.makeText(HomePageActivity.this, dataModal.getId(), Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(HomePageActivity.this, dataModal.getId(), Toast.LENGTH_SHORT).show();
 
                             }
                             // after that we are passing our array list to our adapter class.

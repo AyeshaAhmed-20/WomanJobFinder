@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,74 +19,30 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 public class MainActivity extends AppCompatActivity {
 
-    private EditText editTextEmail, editTextPassword;
-    private Button buttonLogin;
 
-    private FirebaseAuth mAuth;
-
-    TextView signUpText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mAuth = FirebaseAuth.getInstance();
-
-        editTextEmail = findViewById(R.id.editTextEmail);
-        editTextPassword = findViewById(R.id.editTextPassword);
-        buttonLogin = findViewById(R.id.buttonLogin);
-        signUpText = findViewById(R.id.textViewSignUp);
-
-        signUpText.setOnClickListener(new View.OnClickListener() {
+        new Handler().postDelayed(new Runnable() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
-                startActivity(intent);
-            }
-        });
-        buttonLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            public void run() {
+                // Start the main activity after the splash delay
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-                loginUser();
-            }
-        });
-    }
-
-    private void loginUser() {
-        String email = editTextEmail.getText().toString();
-        String password = editTextPassword.getText().toString();
-
-        mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
-                    // Sign in success, update UI with the signed-in user's information
-                    FirebaseUser user = mAuth.getCurrentUser();
-                   /* Toast.makeText(MainActivity.this, "Authentication successful.",
-                            Toast.LENGTH_SHORT).show();*/
-                    Intent intent = new Intent(MainActivity.this, HomePageActivity.class);
-                    startActivity(intent);
-                    // Add code to navigate to the next activity or perform other actions
-                } else {
-                    // If sign in fails, display a message to the user.
-                    Toast.makeText(MainActivity.this, "Authentication failed.",
-                            Toast.LENGTH_SHORT).show();
+                if(user!=null){
+                    startActivity(new Intent(MainActivity.this, HomePageActivity.class));
                 }
+                else{
+                    startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                }
+
+                finish(); // Close the splash activity so it's not on the back stack
             }
-        });
-
-
-
-
-
-
+        }, 2000);
     }
 
-    public void goToSignUpScreen() {
-        // Navigate to the SignUpActivity
-        Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
-        startActivity(intent);
-    }
+
 }
