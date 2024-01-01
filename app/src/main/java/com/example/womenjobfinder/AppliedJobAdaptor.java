@@ -40,7 +40,7 @@ public class AppliedJobAdaptor extends ArrayAdapter<ResumeModel> {
             Button viewResume = convertView.findViewById(R.id.viewResume);
 
             titleTextView.setText(job.getTitle());
-            descriptionTextView.setText(job.getDate());
+            descriptionTextView.setText("Applied On : "+job.getDate());
             View finalConvertView = convertView;
             viewResume.setOnClickListener(new View.OnClickListener() {
                 @Override

@@ -34,11 +34,15 @@
     </LinearLayout>
 
     <SearchView
+
         android:id="@+id/searchView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:iconifiedByDefault="false"
+        android:queryHint="Search Jobs" />
 
-        android:queryHint="Search Contacts" />
+
 
     <ListView
         android:id="@+id/jobListView"

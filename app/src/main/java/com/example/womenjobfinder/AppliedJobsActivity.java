@@ -62,7 +62,7 @@ public class AppliedJobsActivity extends AppCompatActivity {
 
                                 dataModalArrayList.add(dataModal);
 
-                                Toast.makeText(AppliedJobsActivity.this, dataModal.getUrl(), Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(AppliedJobsActivity.this, dataModal.getUrl(), Toast.LENGTH_SHORT).show();
 
                             }
                             // after that we are passing our array list to our adapter class.

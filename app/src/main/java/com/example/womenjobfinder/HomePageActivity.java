@@ -137,7 +137,46 @@ public class HomePageActivity extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                adapter.getFilter().filter(newText);
+                db.collection("jobs")
+                        .get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                            @Override
+                            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                                if (!queryDocumentSnapshots.isEmpty()) {
+                                    adapter.clear();
+                                    dataModalArrayList.clear();
+                                    // if the snapshot is not empty we are hiding
+                                    // our progress bar and adding our data in a list.
+                                    List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+                                    for (DocumentSnapshot d : list) {
+                                        d.getId();
+
+                                        // after getting this list we are passing
+                                        // that list to our object class.
+                                        //textView.setText(d.toString());
+                                        JobModel dataModal = d.toObject(JobModel.class);
+                                        dataModal.setId(d.getId());
+                                        // after getting data from Firebase we are
+                                        // storing that data in our array list
+                                        if(dataModal.getTitle().toLowerCase().contains(newText.toLowerCase())){
+                                            dataModalArrayList.add(dataModal);
+                                        }
+
+
+                                        //Toast.makeText(HomePageActivity.this, dataModal.getId(), Toast.LENGTH_SHORT).show();
+
+                                    }
+                                    // after that we are passing our array list to our adapter class.
+                                    adapter = new JobAdaptor(HomePageActivity.this, dataModalArrayList);
+
+                                    // after passing this array list to our adapter
+                                    // class we are setting our adapter to our list view.
+                                    listView.setAdapter(adapter);
+                                    //listView.setAdapter(jobAdapter);
+                                }
+                            }
+
+                        });
+                //adapter.getFilter().filter(newText);
                 return false;
             }
         });
