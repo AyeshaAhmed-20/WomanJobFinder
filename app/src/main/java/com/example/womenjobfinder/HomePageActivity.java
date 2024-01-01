@@ -4,8 +4,11 @@ package com.example.womenjobfinder;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,6 +32,8 @@ public class HomePageActivity extends AppCompatActivity {
     ArrayList<JobModel> dataModalArrayList;
     private TextView textView;
     private FirebaseFirestore db;
+
+    private JobAdaptor adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,7 +67,7 @@ public class HomePageActivity extends AppCompatActivity {
                                 dataModalArrayList.add(dataModal);
                             }
                             // after that we are passing our array list to our adapter class.
-                            JobAdaptor adapter = new JobAdaptor(HomePageActivity.this, dataModalArrayList);
+                            adapter = new JobAdaptor(HomePageActivity.this, dataModalArrayList);
 
                             // after passing this array list to our adapter
                             // class we are setting our adapter to our list view.
@@ -82,6 +87,18 @@ public class HomePageActivity extends AppCompatActivity {
                         Toast.makeText(HomePageActivity.this, "Fail to load data..", Toast.LENGTH_SHORT).show();
                     }
                 });
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                JobModel selectedJob = adapter.getItem(position);
+
+                // Open a new activity with the selected job details
+                Intent intent = new Intent(HomePageActivity.this, JobDetailView.class);
+                intent.putExtra("job", selectedJob);
+                startActivity(intent);
+            }
+        });
 
        /* db.collection("jobs")
                 .get()
