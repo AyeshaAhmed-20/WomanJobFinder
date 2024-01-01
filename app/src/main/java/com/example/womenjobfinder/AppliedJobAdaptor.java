@@ -1,27 +1,25 @@
 package com.example.womenjobfinder;
 
-import static java.security.AccessController.getContext;
-
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.ArrayAdapter;
-import android.widget.Filter;
+import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import java.util.ArrayList;
 import java.util.List;
 
 // JobAdapter.java
-public class JobAdaptor extends ArrayAdapter<JobModel> {
+public class AppliedJobAdaptor extends ArrayAdapter<ResumeModel> {
 
-    public JobAdaptor(Context context, List<JobModel> jobs) {
+    public AppliedJobAdaptor(Context context, List<ResumeModel> jobs) {
         super(context, 0, jobs);
     }
 
@@ -29,19 +27,34 @@ public class JobAdaptor extends ArrayAdapter<JobModel> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.job_list_tile, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.applied_job_list_tile, parent, false);
         }
 
 
 
-        JobModel job = getItem(position);
+        ResumeModel job = getItem(position);
 
         if (job != null) {
             TextView titleTextView = convertView.findViewById(R.id.title);
-            TextView descriptionTextView = convertView.findViewById(R.id.salary);
+            TextView descriptionTextView = convertView.findViewById(R.id.appliedOn);
+            Button viewResume = convertView.findViewById(R.id.viewResume);
 
             titleTextView.setText(job.getTitle());
-            descriptionTextView.setText(job.getCompany());
+            descriptionTextView.setText(job.getDate());
+            View finalConvertView = convertView;
+            viewResume.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setDataAndType(Uri.parse( "http://docs.google.com/viewer?url=" + job.getUrl()), "text/html");
+
+                    finalConvertView.getContext().startActivity(intent);
+
+
+
+                }
+            });
+
         }
 
         /*convertView.setOnClickListener(new View.OnClickListener() {

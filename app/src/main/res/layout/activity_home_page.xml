@@ -1,25 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
+    android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_margin="5dp"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/textViewWelcome"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/textViewWelcome"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Women Job Portal"
+            android:textSize="24sp"
+            android:gravity="left"/>
+
+        <ImageView
+            android:id="@+id/myJobs"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/job"/>
+    </LinearLayout>
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Welcome to Job Portal"
-        android:textSize="24sp"
-        android:layout_marginTop="32dp"
-        android:layout_centerHorizontal="true"/>
+
+        android:queryHint="Search Contacts" />
 
     <ListView
         android:id="@+id/jobListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/textViewWelcome"
+
         android:layout_marginTop="16dp"
         android:divider="@android:color/darker_gray"
         android:dividerHeight="1dp"/>
 
-</RelativeLayout>
+</LinearLayout>

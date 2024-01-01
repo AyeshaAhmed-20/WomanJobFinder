@@ -6,6 +6,16 @@ import android.os.Parcelable;
 import androidx.annotation.NonNull;
 
 public class JobModel implements Parcelable {
+    private String id;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     private String title,description,city,country,date,salary,postedBy,email,phone,company,qualification;
 
     public JobModel() {
@@ -23,6 +33,7 @@ public class JobModel implements Parcelable {
         phone = in.readString();
         company = in.readString();
         qualification = in.readString();
+        id = in.readString();
     }
 
     public static final Creator<JobModel> CREATOR = new Creator<JobModel>() {
@@ -157,5 +168,6 @@ public class JobModel implements Parcelable {
         dest.writeString(phone);
         dest.writeString(company);
         dest.writeString(qualification);
+        dest.writeString(id);
     }
 }
