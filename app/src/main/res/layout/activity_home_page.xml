@@ -49,7 +49,7 @@
         android:layout_height="35dp"
         android:layout_margin="10dp"
         android:iconifiedByDefault="false"
-        android:queryHint="Search Jobs"
+        android:queryHint="Search Job"
         android:background="#E8FAF5F5"
 
         />
