@@ -13,7 +13,7 @@
         android:id="@+id/myJobs"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/logo"/>
+        android:src="@drawable/images"/>
 
     <TextView
         android:layout_width="match_parent"
