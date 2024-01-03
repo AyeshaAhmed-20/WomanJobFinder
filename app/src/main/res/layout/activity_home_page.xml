@@ -3,28 +3,37 @@
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#E8FAF5F5"
+    >
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_margin="10dp"
-        android:layout_height="wrap_content">
-
+        android:layout_margin="0dp"
+        android:layout_height="70dp"
+        android:background="#FF673AB7">
         <TextView
             android:id="@+id/textViewWelcome"
             android:layout_width="fill_parent"
+            android:layout_margin="20dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Women Job Portal"
             android:textSize="24sp"
-            android:gravity="left"/>
+            android:gravity="center"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="#E8FAF5F5"
+
+            />
 
         <ImageView
             android:id="@+id/myJobs"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginEnd="10dp"
-            android:src="@drawable/job"/>
+            android:src="@drawable/job"
+
+            />
         <ImageView
             android:id="@+id/logoutButton"
             android:layout_width="25dp"
@@ -40,20 +49,28 @@
 
         android:id="@+id/searchView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_margin="10dp"
         android:iconifiedByDefault="false"
-        android:queryHint="Search Jobs" />
+        android:queryHint="Search Job"
+        android:background="#E8FAF5F5"
+
+        />
 
 
 
     <ListView
+
         android:id="@+id/jobListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textColor="#E8FAF5F5"
         android:layout_marginTop="16dp"
         android:divider="@android:color/darker_gray"
-        android:dividerHeight="1dp"/>
+        android:dividerHeight="3dp"
+
+        android:background="#E8FAF5F5"/>
 
 </LinearLayout>
