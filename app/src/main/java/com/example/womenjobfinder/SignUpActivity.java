@@ -68,8 +68,9 @@ public class SignUpActivity extends AppCompatActivity {
                     posts.put("phone", phone.getText().toString());
 
                     FirebaseFirestore.getInstance().collection("users").document(FirebaseAuth.getInstance().getCurrentUser().getUid()).set(posts);
-                    Intent intent = new Intent(SignUpActivity.this, HomePageActivity.class);
+                    Intent intent = new Intent(SignUpActivity.this, MainMenuActivity.class);
                     startActivity(intent);
+                    finish();
 
                     // Add code to navigate to the next activity or perform other actions
                 } else {
