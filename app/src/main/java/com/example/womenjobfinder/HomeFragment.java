@@ -77,7 +77,7 @@ public class HomeFragment extends Fragment {
     private SearchView searchView;
     ArrayList<JobModel> dataModalArrayList;
     private TextView textView;
-    private ImageView myJobButton,logout;
+    //private ImageView myJobButton,logout;
     private FirebaseFirestore db;
 
     private JobAdaptor adapter;
@@ -106,12 +106,12 @@ public class HomeFragment extends Fragment {
         searchView=view.findViewById(R.id.searchView);
         listView = view.findViewById(R.id.jobListView);
         textView = view.findViewById(R.id.textViewWelcome);
-        myJobButton = view.findViewById(R.id.myJobs);
-        logout = view.findViewById(R.id.logoutButton);
+        /*myJobButton = view.findViewById(R.id.myJobs);
+        logout = view.findViewById(R.id.logoutButton);*/
 
         dataModalArrayList = new ArrayList<>();
 
-        myJobButton.setOnClickListener(new View.OnClickListener() {
+        /*myJobButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), AppliedJobsActivity.class);
@@ -119,15 +119,15 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
-        logout.setOnClickListener(new View.OnClickListener() {
+*/
+        /*logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(getActivity(), LoginActivity.class));
                 getActivity().finish();
             }
-        });
+        });*/
 
         db = FirebaseFirestore.getInstance();
 

@@ -28,7 +28,7 @@
         android:id="@+id/myJobs"
         android:layout_width="wrap_content"
         android:layout_height="500dp"
-        android:src="@drawable/images"
+        android:src="@drawable/logo"
         android:gravity="center"
 
        />

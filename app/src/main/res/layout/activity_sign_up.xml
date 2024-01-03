@@ -13,30 +13,41 @@
         android:id="@+id/myJobs"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/images"/>
+        android:src="@drawable/logo"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Create Your Account!"
         android:textSize="30sp"
+
         android:textStyle="bold"
         android:gravity="center"/>
 
-    <TextView
+
+
+    <EditText
+        android:id="@+id/editTextName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""
-        android:layout_marginBottom="70dp"
-        android:textSize="16sp"
-        android:gravity="center"/>
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="10dp"
+        android:hint="Name"/>
 
     <EditText
         android:id="@+id/editTextEmailSignUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="30dp"
         android:hint="Email"/>
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:hint="Phone"
+        android:inputType="phone"/>
 
     <EditText
         android:id="@+id/editTextPasswordSignUp"

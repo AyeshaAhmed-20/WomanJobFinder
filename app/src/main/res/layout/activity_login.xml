@@ -7,13 +7,13 @@
     android:orientation="vertical"
     android:padding="16dp"
     android:gravity="center"
-    tools:context=".MainActivity">
+    tools:context=".LoginActivity">
 
     <ImageView
         android:id="@+id/myJobs"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/images"/>
+        android:src="@drawable/logo"/>
 
     <TextView
         android:layout_width="match_parent"
